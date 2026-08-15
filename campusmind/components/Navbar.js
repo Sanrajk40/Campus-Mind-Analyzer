@@ -10,8 +10,8 @@ export default function Navbar() {
     return (
         <nav className="navbar md:px-60 mb-10 flex w-full h-[8vh] items-center justify-between border-b border-white/10 px-4">
             <h1 className='text-xl flex'>
-                <span><AnimatedText text="Aritrik's" /></span>
-                <span className="text-purple-700 pl-2"><AnimatedText text="Portfolio" /></span>
+                <span><AnimatedText text="Campus" /></span>
+                <span className="text-purple-700 pl-2"><AnimatedText text="Mind" /></span>
             </h1>
 
             {/* Hamburger Icon - visible only on mobile */}
@@ -26,8 +26,7 @@ export default function Navbar() {
                 <Link href={"/"}>Home</Link>
                 <Link href={"/about"}>About</Link>
                 <Link href={"/services"}>Services</Link>
-                <Link href={"/projects"}>Projects</Link>
-                <Link href={"/contactme"}>Contact Me</Link>
+                <Link href={"/contact"}>Contact</Link>
             </ul>
 
             {/* Mobile Menu */}
