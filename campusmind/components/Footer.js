@@ -1,77 +1,92 @@
-import React from 'react'
-import Link from 'next/link'
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
 import { FaGithub, FaTwitter, FaYoutube, FaFacebook } from 'react-icons/fa';
+import { useTheme } from '@/context/ThemeContext'; // Import the global hook
 
 const Footer = () => {
+    const theme = useTheme(); // Consume your global theme variables
+
     return (
-        <>
-            <h1 className="border-b border-violet-600 mt-[60vh] mb-6"></h1>
-            <footer className="flex md:gap-44 gap-12 md:px-45 my-6">
-                <div className="text text-violet-300 font-bold flex flex-col w-[13vw]">
-                    <span className="">Campus Mind</span>
-                    <span className="">Analyzer</span>
+        <div className={`w-full ${theme.navBg} transition-all duration-1000 mt-20`}>
+            {/* Divider line utilizing current theme accent boundaries */}
+            <hr className="border-t border-white/10 w-full" />
+            
+            <footer className={`flex flex-col md:flex-row md:gap-44 gap-12 px-6 md:px-44 py-10 w-full ${theme.navText}`}>
+                {/* Brand Title Area */}
+                <div className={`text font-bold flex flex-col min-w-[150px] text-lg ${theme.titleText}`}>
+                    <span>Campus Mind</span>
+                    <span>Analyzer</span>
                 </div>
-                <div className="footer flex justify-between w-full">
-                    <div className="main flex flex-col gap-2">
-                        <h1 className="text-md text-violet-300 font-bold">Main</h1>
-                        <div className="body text-sm text-violet-700  flex flex-col gap-1 items-start">
-                            <Link href={"/"} className="">Home</Link>
-                            <Link href={"/contact"} className="">Contact</Link>
-                            <Link href={"/services"} className="">Services</Link>
-                            </div>
+                
+                {/* Links Container */}
+                <div className="footer flex flex-wrap md:flex-nowrap justify-between w-full gap-8">
+                    {/* Navigation Category */}
+                    <div className="main flex flex-col gap-2 min-w-[100px]">
+                        <h1 className={`text-md font-bold ${theme.titleText}`}>Main</h1>
+                        <div className={`body text-sm flex flex-col gap-1 items-start ${theme.bodyText}`}>
+                            <Link href={"/"} className="hover:underline opacity-90 hover:opacity-100">Home</Link>
+                            <Link href={"/contact"} className="hover:underline opacity-90 hover:opacity-100">Contact</Link>
+                            <Link href={"/services"} className="hover:underline opacity-90 hover:opacity-100">Services</Link>
+                        </div>
                     </div>
-                    <div className="legal flex flex-col gap-2">
-                        <h1 className="text-md text-violet-300 font-bold">Legal</h1>
-                        <div className="body text-sm text-violet-700  flex flex-col gap-1 items-start">
-                            <Link href={"/terms"} className="">Terms</Link>
-                            <Link href={"/privacy"} className="">Privacy</Link>
-                            </div>
+
+                    {/* Legal Links Category */}
+                    <div className="legal flex flex-col gap-2 min-w-[100px]">
+                        <h1 className={`text-md font-bold ${theme.titleText}`}>Legal</h1>
+                        <div className={`body text-sm flex flex-col gap-1 items-start ${theme.bodyText}`}>
+                            <Link href={"/terms"} className="hover:underline opacity-90 hover:opacity-100">Terms</Link>
+                            <Link href={"/privacy"} className="hover:underline opacity-90 hover:opacity-100">Privacy</Link>
+                        </div>
                     </div>
-                    <div className="social flex flex-col gap-2">
-                        <h1 className="text-md text-violet-300 font-bold">Social</h1>
-                        <div className="body text-sm text-violet-700  flex flex-col gap-1.5 items-start">
+
+                    {/* Social Channels Links */}
+                    <div className="social flex flex-col gap-2 min-w-[120px]">
+                        <h1 className={`text-md font-bold ${theme.titleText}`}>Social</h1>
+                        <div className={`body text-sm flex flex-col gap-2 items-start ${theme.bodyText}`}>
                             <a
                                 href="https://github.com/your-username"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2"
+                                className="flex items-center gap-2 hover:underline opacity-90 hover:opacity-100"
                             >
-                                <FaGithub size={20} />
+                                <FaGithub size={18} />
                                 GitHub
                             </a>
                             <a
                                 href="https://twitter.com/your-username"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2"
+                                className="flex items-center gap-2 hover:underline opacity-90 hover:opacity-100"
                             >
-                                <FaTwitter size={20} />
+                                <FaTwitter size={18} />
                                 Twitter
                             </a>
                             <a
                                 href="https://youtube.com/your-username"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2"
+                                className="flex items-center gap-2 hover:underline opacity-90 hover:opacity-100"
                             >
-                                <FaYoutube size={20} />
+                                <FaYoutube size={18} />
                                 YouTube
                             </a>
                             <a
                                 href="https://facebook.com/your-username"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2"
+                                className="flex items-center gap-2 hover:underline opacity-90 hover:opacity-100"
                             >
-                                <FaFacebook size={20} />
+                                <FaFacebook size={18} />
                                 Facebook
                             </a>
                         </div>
                     </div>
                 </div>
             </footer>
-        </>
-    )
-}
+        </div>
+    );
+};
 
-export default Footer
+export default Footer;

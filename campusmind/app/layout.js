@@ -1,33 +1,27 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import './globals.css';
+import { ThemeProvider } from '@/context/ThemeContext';
+import MainWrapper from '@/components/MainWrapper';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata = {
-  title: "Campus Mind Analyzer",
-  description: "For a campus full of healthy minds",
+  title: 'Campus Mind Portal',
+  description: 'A student journaling portal',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}
-        <Navbar />
-        {children}
-        <Footer />
+    <html lang="en">
+      <body>
+        <ThemeProvider>
+          <MainWrapper>
+            <Navbar />
+            <main className="flex-grow flex flex-col items-center justify-center p-4">
+              {children}
+            </main>
+            <Footer />
+          </MainWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );
