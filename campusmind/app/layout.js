@@ -5,8 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: 'Campus Mind Portal',
-  description: 'A student journaling portal',
+  title: 'Campus Mind Analyzer',
+  description: 'For a campus full of healthy minds',
 };
 
 export default function RootLayout({ children }) {
