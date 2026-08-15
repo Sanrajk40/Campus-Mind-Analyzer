@@ -1,13 +1,29 @@
 "use client"
 import { useState } from 'react';
 import Link from 'next/link';
-import { HiMenu, HiX } from 'react-icons/hi';
-import AnimatedText from './AnimatedText';
-import { useTheme } from '@/context/ThemeContext';
+import { usePathname } from 'next/navigation'; // Import the path tracker hook
+import { HiMenu, HiX } from 'react-icons/hi'; 
+import AnimatedText from './AnimatedText'; 
+import { useTheme } from '@/context/ThemeContext'; 
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const theme = useTheme(); // Now includes theme state and changeThemeMode function
+    const theme = useTheme(); 
+    const pathname = usePathname(); // Get the current active URL path
+
+    // Array configuration for cleaner link mapping and management
+    const navLinks = [
+        { name: 'Home', href: '/' },
+        { name: 'About', href: '/about' },
+        { name: 'Services', href: '/services' },
+        { name: 'Contact', href: '/contact' }
+    ];
+
+    // Helper function to check if a route is currently active
+    const isActive = (path) => {
+        if (path === '/') return pathname === '/';
+        return pathname.startsWith(path);
+    };
 
     return (
         <nav className={`navbar md:px-60 flex w-full h-[8vh] items-center justify-between border-b border-white/10 px-4 ${theme.navBg} ${theme.navText} transition-all duration-1000 relative`}>
@@ -43,10 +59,22 @@ export default function Navbar() {
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex gap-6 text-sm font-medium">
-                <Link href={"/"} className="hover:opacity-80 transition-opacity">Home</Link>
-                <Link href={"/about"} className="hover:opacity-80 transition-opacity">About</Link>
-                <Link href={"/services"} className="hover:opacity-80 transition-opacity">Services</Link>
-                <Link href={"/contact"} className="hover:opacity-80 transition-opacity">Contact</Link>
+                {navLinks.map((link) => {
+                    const active = isActive(link.href);
+                    return (
+                        <Link 
+                            key={link.href}
+                            href={link.href} 
+                            className={`transition-all duration-300 relative py-1 px-2 rounded-md ${
+                                active 
+                                ? `${theme.buttonBg} ${theme.buttonText} font-bold shadow-sm` 
+                                : 'hover:opacity-70 opacity-90'
+                            }`}
+                        >
+                            {link.name}
+                        </Link>
+                    );
+                })}
             </ul>
 
             {/* Mobile Menu */}
@@ -64,11 +92,24 @@ export default function Navbar() {
                             </button>
                         ))}
                     </div>
-                    <Link href={"/"} onClick={() => setIsOpen(false)}>Home</Link>
-                    <Link href={"/about"} onClick={() => setIsOpen(false)}>About</Link>
-                    <Link href={"/services"} onClick={() => setIsOpen(false)}>Services</Link>
-                    <Link href={"/projects"} onClick={() => setIsOpen(false)}>Projects</Link>
-                    <Link href={"/contactme"} onClick={() => setIsOpen(false)}>Contact Me</Link>
+                    
+                    {navLinks.map((link) => {
+                        const active = isActive(link.href);
+                        return (
+                            <Link 
+                                key={link.href}
+                                href={link.href} 
+                                onClick={() => setIsOpen(false)}
+                                className={`w-full py-1.5 px-3 rounded-md transition-all duration-300 ${
+                                    active 
+                                    ? `${theme.buttonBg} ${theme.buttonText} font-bold shadow-inner` 
+                                    : 'hover:bg-white/10'
+                                }`}
+                            >
+                                {link.name}
+                            </Link>
+                        );
+                    })}
                 </ul>
             )}
         </nav>
