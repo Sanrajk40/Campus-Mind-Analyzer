@@ -54,7 +54,8 @@ export default function JournalPortal() {
           className={`w-full h-48 rounded-lg p-4 outline-none resize-none shadow-md border border-transparent focus:border-current/20 transition-all duration-1000 ${theme.inputBg} ${theme.inputText} ${theme.inputPlaceholder}`}
         />
       </div>
-
+      
+      
       {/* Action Button */}
       <div className="text-left">
         <button

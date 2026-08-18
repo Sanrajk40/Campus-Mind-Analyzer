@@ -1,0 +1,31 @@
+.stApp {
+    background-image: url("afternoonbgf.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed!important;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+[data-testid="stAppViewContainer"],[data-testid="st.header"]{
+    background-color: transparent !important;
+    background-size: cover!important;
+    background-image: url("afternoonbgf.jpg")!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    background-attachment: fixed!important;
+}
+[data-testid="stMain"] {
+    background-color: rgba(255, 255, 255, 0.1)!important;
+}
+.Head {
+    font-family: cursive;
+    text-align: center;
+    border: solid;
+    border-color: goldenrod;
+    border-radius: 6px;
+    background-color: rgba(84, 143, 209, 0.658);
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+
+}
