@@ -1,0 +1,5 @@
+.stApp{
+    background: linear-gradient(135deg,#ff007f 0%, #7b2cbf 40%, #10002b 100%) !important;
+    min-height: 100vh;
+    margin: 0;
+}

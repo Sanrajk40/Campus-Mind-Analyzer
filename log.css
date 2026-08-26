@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* Main Background */
+html, body, [data-testid="stAppViewContainer"] {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    background: radial-gradient(circle at top right, #1e1b4b, #0f172a 60%, #020617) !important;
+}
+
+/* Hide Streamlit Header */
+header[data-testid="stHeader"], [data-testid="stSidebar"] {
+    display: none !important;
+}
+
+/* High Contrast Headings */
+h1, h2, h3, [data-testid="stMarkdownContainer"] h3 {
+    color: #38bdf8 !important;
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 4px !important;
+}
+
+/* Subtitles, Captions & Body Text */
+[data-testid="stCaptionContainer"], small {
+    color: #a7f3d0 !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+}
+
+p, span, div, label {
+    color: #f8fafc !important;
+    font-weight: 500 !important;
+}
+
+/* Form Labels Specifically */
+[data-testid="stWidgetLabel"] label, label p {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+}
+
+/* Bright Form Input Fields */
+input[type="text"] {
+    background-color: rgba(30, 41, 59, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
+}
+
+/* Glowing Primary Button */
+div.stButton > button {
+    width: 100% !important;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    padding: 14px 20px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.5) !important;
+}
+/* Digital Glowing Title */
+.digital-title {
+    font-size: 2.4rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px !important;
+    background: linear-gradient(90deg, #00f2fe 0%, #4facfe 50%, #00c6ff 100%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.4) !important;
+}

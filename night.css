@@ -1,0 +1,14 @@
+.stApp{
+    background: linear-gradient(180deg, #1e1b4b 0%,#0b0c10 100%) !important;
+    min-height: 100vh;
+    color: #e2e8f0;
+}
+.st-emotion-cache-4s1cij {
+    color: rgb(211, 85, 12);
+    border: black solid 2px;
+    border-radius: 5px;
+}
+.st-emotion-cache-15okssx p, .st-emotion-cache-15okssx ol, .st-emotion-cache-15okssx ul, .st-emotion-cache-15okssx dl, .st-emotion-cache-15okssx li {
+    font-size: inherit;
+    color: #e54343;
+}

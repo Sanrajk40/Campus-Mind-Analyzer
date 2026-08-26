@@ -1,0 +1,28 @@
+import './globals.css';
+import { ThemeProvider } from '@/context/ThemeContext';
+import MainWrapper from '@/components/MainWrapper';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+export const metadata = {
+  title: 'Campus Mind Analyzer',
+  description: 'For a campus full of healthy minds',
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        <ThemeProvider>
+          <MainWrapper>
+            <Navbar />
+            <main className="flex-grow flex flex-col items-center justify-center p-4">
+              {children}
+            </main>
+            <Footer />
+          </MainWrapper>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
