@@ -7,6 +7,29 @@ const ThemeContext = createContext();
 // Pre-configured theme variations for easier reuse
 const themes = {
   morning: {
+  name: 'Quiet Sage',
+  bg: 'bg-[#D1E7DD]',                // Prominent, rich therapeutic green tint (solid, no transparency)
+  
+  // High contrast text anchors to prevent blending with the deeper background
+  titleText: 'text-slate-900',       // Deep charcoal text to cleanly anchor the layout
+  bodyText: 'text-slate-800',        // Clear body text
+  subText: 'text-slate-600',         
+  
+  // Isolated structural components
+  inputBg: 'bg-white',               // Solid white box so the journaling section pops crisply
+  inputText: 'text-slate-900',       
+  inputPlaceholder: 'placeholder-slate-400',
+  
+  // High-contrast deep green primary action buttons
+  buttonBg: 'bg-[#14532D]',          // Rich dark forest green button for an explicit visual weight
+  buttonText: 'text-white',          
+  buttonHover: 'hover:bg-[#166534]', 
+  
+  // Navigation separation
+  navBg: 'bg-white/60',              // Clean glassmorphism that clearly defines the header section
+  navText: 'text-slate-900'          
+},
+  afternoon: {
     name: 'Morning',
     bg: 'bg-[#FCD34D]',
     titleText: 'text-slate-900',
@@ -20,21 +43,6 @@ const themes = {
     buttonHover: 'hover:bg-slate-800',
     navBg: 'bg-white/40',
     navText: 'text-slate-900'
-  },
-  afternoon: {
-    name: 'Afternoon',
-    bg: 'bg-[#E5CB50]',
-    titleText: 'text-white',
-    bodyText: 'text-white',
-    subText: 'text-white/70',
-    inputBg: 'bg-[#333333]',
-    inputText: 'text-white',
-    inputPlaceholder: 'placeholder-gray-500',
-    buttonBg: 'bg-[#A4C3E2]',
-    buttonText: 'text-slate-800',
-    buttonHover: 'hover:bg-[#8eb2d6]',
-    navBg: 'bg-black/10',
-    navText: 'text-white'
   },
   evening: {
     name: 'Evening',
@@ -53,18 +61,18 @@ const themes = {
   },
   night: {
     name: 'Night',
-    bg: 'bg-[#1E293B]',
-    titleText: 'text-indigo-200',
-    bodyText: 'text-slate-200',
-    subText: 'text-slate-400',
-    inputBg: 'bg-slate-900',
+    bg: 'bg-[#334155]',            // Lifted to a softer, less heavy dark slate-blue
+    titleText: 'text-indigo-100',   // Slightly brightened for crisp contrast
+    bodyText: 'text-slate-100',     // Clear, soft light text
+    subText: 'text-slate-300',      // Balanced secondary text
+    inputBg: 'bg-[#1E293B]',        // Reused your old background color here for depth!
     inputText: 'text-slate-100',
-    inputPlaceholder: 'placeholder-slate-600',
+    inputPlaceholder: 'placeholder-slate-400',
     buttonBg: 'bg-indigo-500',
     buttonText: 'text-white',
     buttonHover: 'hover:bg-indigo-600',
-    navBg: 'bg-slate-900/60',
-    navText: 'text-indigo-200'
+    navBg: 'bg-slate-900/40',       // Soft transparent overlay
+    navText: 'text-indigo-100'
   }
 };
 
